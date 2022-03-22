@@ -7,6 +7,6 @@ const orderSchema = new mongoose.Schema({
     price: Number
 })
 
-module.exports({
+module.exports={
     orderSchema
-})
+}
