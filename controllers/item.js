@@ -23,6 +23,7 @@ const getItemById = async (req, res) => {
 
 const addItem = async (req, res) => {
     let item = new Item(req.body);
+    console.log(item)
     try {
         await item.save();
         return res.send(item);

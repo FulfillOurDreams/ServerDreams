@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const mongoose=require('mongoose')
 const itemController = require('./controllers/item')
 const userConroller = require('./controllers/user');
@@ -9,6 +10,9 @@ mongoose.connect('mongodb://localhost:27017/FulfillOurDreams')
 .catch(error=>console.log(error))
 
 const app = express();
+
+app.use(express.json())
+app.use(cors())
 app.get('/user',userConroller.getAllItemsByUserId)
 app.get('/winning/:id', winningConroller.getWinnerByCode)
 app.get('/winning/getUserSubscribe/:id',winningConroller.alluserbyproductcode)

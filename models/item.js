@@ -1,9 +1,10 @@
 const mongoose=require("mongoose");
 
 const itemSchema=new mongoose.Schema({
-    item_name:String,
-    item_description:String,
-    item_price:{type:Number,min:0}
+    name:String,
+    description:String,
+    price:{type:Number,min:0},
+    image:String,
 })
 
 const Item=mongoose.model("items",itemSchema);
