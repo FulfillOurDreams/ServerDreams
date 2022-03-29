@@ -2,6 +2,7 @@ const { User } = require('../models/user');
 
 const addUser = async (req, res) => {
     let user = new User(req.body);
+    console.log(user)
     try {
         await user.save();
         return res.send(user);
@@ -50,7 +51,3 @@ const addOrder = async (req, res) => {
 }
 
 module.exports = { addUser, getAllItemsByUserId, addOrder };
-
-
-
-
